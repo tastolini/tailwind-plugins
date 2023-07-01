@@ -1,8 +1,9 @@
 module.exports = function ({ addBase }) {
   let styles = {
     '.container': {
-      width:
-        'calc(var(--container-width, 100%) - (2 * var(--breakout-container-outer-gutter, var(--container-outer-gutter, var(--outer-gutter, 0)))))',
+      '--tmp-container-outer-gutter': 'var(--container-outer-gutter, var(--outer-gutter, 0))',
+      '--tmp-breakout-container-outer-gutter': 'var(--breakout-container-outer-gutter, var(--tmp-container-outer-gutter))',
+      width: 'calc(var(--container-width, 100%) - (2 * var(--tmp-breakout-container-outer-gutter)))',
       'margin-right': 'auto',
       'margin-left': 'auto',
     },
